@@ -39,4 +39,3 @@ with open('volt_data.csv', 'w+', newline='') as f:           # Open CV file
             writedat.writerow([values[0], values[1], values[2],
                                values[3], datetime.now().isoformat()])     # Write data and time to CSV
             sleep( 5 )                                  # Sleep for 5 seconds
-os.system("sudo shutdown -h now")						# Shutdown the pi

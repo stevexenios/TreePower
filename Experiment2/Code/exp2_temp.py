@@ -21,7 +21,7 @@ SPI_DEVICE = 0
 mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
 
 # Save Data for 30 Seconds
-with open('data.csv', 'w+', newline='') as f:           # Open CV file
+with open('temp_data.csv', 'w+', newline='') as f:           # Open CV file
         writedat = csv.writer(f)
         while (time.time() < startTime + 30):
             for i in range(8):
