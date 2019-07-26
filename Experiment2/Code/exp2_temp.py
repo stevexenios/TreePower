@@ -21,7 +21,7 @@ SPI_DEVICE = 0
 mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
 
 # Save Data for 30 Seconds
-with open('temp_data.csv', 'w+', newline='') as f:           # Open CV file
+with open('/home/pi/temp_data.csv', 'w+', newline='') as f:           # Open CV file
         writedat = csv.writer(f)
         while (time.time() < startTime + 30):
             for i in range(8):
@@ -30,4 +30,9 @@ with open('temp_data.csv', 'w+', newline='') as f:           # Open CV file
                                values[4], values[5], values[6], values[7],
                                datetime.now().isoformat()])     # Write data and time to CSV
             sleep( 5 )                                  # Sleep for 5 seconds
+                
+# Back up latest csv before shutting down
+copyfile('/home/pi/temp_data.csv', '/home/pi/temp_data_bak_" + datetime.now().isoformat() + '.csv')
+
+sleep(10)
 os.system("sudo shutdown -h now")						# Shutdown the pi
