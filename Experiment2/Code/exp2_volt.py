@@ -23,7 +23,7 @@ CS   = 25
 mcp = Adafruit_MCP3008.MCP3008(clk=CLK, cs=CS, miso=MISO, mosi=MOSI)
 
 # Save Data for 30 Seconds
-with open('volt_data.csv', 'w+', newline='') as f:           # Open CV file
+with open('/home/pi/volt_data.csv', 'w+', newline='') as f:           # Open CV file
         writedat = csv.writer(f)
         while (time.time() < startTime + 30):
             for i in range(8):
@@ -39,3 +39,5 @@ with open('volt_data.csv', 'w+', newline='') as f:           # Open CV file
             writedat.writerow([values[0], values[1], values[2],
                                values[3], datetime.now().isoformat()])     # Write data and time to CSV
             sleep( 5 )                                  # Sleep for 5 seconds
+# Back up latest csv before shutting down
+copyfile('/home/pi/volt_data.csv', '/home/pi/volt_data_bak_" + datetime.now().isoformat() + '.csv')
