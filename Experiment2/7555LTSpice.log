@@ -1,0 +1,21 @@
+Circuit: * C:\Users\Brutal Tom Rammen\Documents\GitHub\TreePower\Experiment2\7555LTSpice.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Jul 29 11:24:43 2019
+Total elapsed time: 0.388 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 72063
+traniter = 72042
+tranpoints = 26061
+accept = 24008
+rejected = 2053
+matrix size = 15
+fillins = 0
+solver = Normal
+Matrix Compiler1:      31 opcodes  0.1/[0.0]/0.1
+Matrix Compiler2: 883 bytes object code size  0.1/0.1/[0.1]
+
