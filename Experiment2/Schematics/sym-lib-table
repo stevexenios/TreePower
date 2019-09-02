@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name TIME)(type Legacy)(uri ${KIPRJMOD}/TIME.lib)(options "")(descr ""))
+  (lib (name Sense1-rescue)(type Legacy)(uri ${KIPRJMOD}/Sense1-rescue.lib)(options "")(descr ""))
+)
